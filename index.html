@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>플립 카운터</title>
+	<link rel="stylesheet" href="src/adtCount.css?v=1.00">
+
+	<style>
+		body {
+			margin: 0; 
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-width: 375px;
+			height: 100vh;
+			background: #151515;
+		}
+		#adtCount {
+			font-size: 40px;
+		}
+		@media (max-width: 1024px) {
+			#adtCount {
+				font-size: 28px;
+			}
+		}
+		@media (max-width: 768px) {
+			#adtCount {
+				font-size: 14px;
+			}
+			#adtCount .hidden {
+				border-radius: 5px 5px 0 0;
+			}
+			#adtCount .top .front {
+				border-radius: 5px
+			}
+			#adtCount .top .back {
+				border-radius: 5px;
+			}
+			#adtCount .bottom {
+				border-radius: 0 0 5px 5px;
+			}
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="adtCount"></div>
+
+<script src="src/adtCount.js?v=1.00"></script>
+<script>
+
+	document.querySelector('#adtCount').setCount();
+
+</script>
+</body>
+</html>

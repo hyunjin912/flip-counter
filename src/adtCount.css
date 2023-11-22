@@ -1,0 +1,174 @@
+/***************************************************************************************************************
+* Author : Lee
+* Plugin Name : adtCount
+* File Name : adtCount.css
+* Version : v1.00
+****************************************************************************************************************/
+@charset "utf-8";
+
+#adtCount,
+#adtCount * {margin: 0; padding: 0; box-sizing: border-box;  font: inherit;}
+#adtCount {
+	font-family: 'Malgun Gothic','맑은 고딕', 'dotum', '돋움', 'Arial', sans-serif; 
+	font-size: 10px; /* change */
+	font-weight: normal;
+	line-height: 1;
+}
+#adtCount {
+	background: #151515;
+	padding: 20px;
+	color: #fff;
+}
+#adtCount::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#adtCount .bundle {
+	font-size: 3.6em;
+	font-weight: bold;
+	float: left;
+}
+#adtCount.time .bundle + .bundle,
+#adtCount.stopwatch .bundle + .bundle {
+	position: relative;
+	padding-left: 0.5em;
+}
+#adtCount.time .bundle + .bundle::before,
+#adtCount.time .bundle + .bundle::after, 
+#adtCount.stopwatch .bundle + .bundle::before,
+#adtCount.stopwatch .bundle + .bundle::after {
+	content: '';
+	position: absolute;
+	left: 0.25em;
+	width: 0.17em;
+	height: 0.17em;
+	border-radius: 50%;
+	background: #ddd;
+	transform: translateX(-50%);
+}
+#adtCount.time .bundle + .bundle::before,
+#adtCount.stopwatch .bundle + .bundle::before {
+	top: 0.28em;
+}
+#adtCount.time .bundle + .bundle::after,
+#adtCount.stopwatch .bundle + .bundle::after {
+	bottom: 0.28em;
+}
+
+#adtCount .digit {
+	position: relative;
+	float: left;
+	width: 0.844em;
+	height: 1.27em;
+	line-height: 1.22em;
+	text-align: center;
+	perspective: 5em;
+}
+#adtCount .digit::before {
+	content: '';
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1px;
+	background: #222;
+	margin: auto 0;
+}
+#adtCount .digit + .digit {
+	margin-left: 0.1em;
+}
+#adtCount .hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	background: #ddd;
+	color: #222;
+	border-radius: 10px 10px 0 0;
+}
+#adtCount .hidden span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#adtCount .top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: 0s;
+	transform: rotateX(0deg);
+	z-index: 1;
+}
+#adtCount .top.tic {
+	transition: 0.5s;
+	transform: rotateX(-180deg);	
+}
+#adtCount .top .front {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	background: #ddd;
+	color: #222;
+	z-index: 1;
+	overflow: hidden;
+	border-radius: 10px
+}
+#adtCount .top.tic .front {
+	transition: 0.5s;
+	z-index: 0;
+} 
+#adtCount .top .front span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#adtCount .top .back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	background: #eee;
+	color: #333;
+	overflow: hidden;
+	transform: rotateX(180deg);
+	border-radius: 10px;
+}
+#adtCount .top .back span {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;		
+}
+#adtCount .bottom {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+	background: #eee;
+	color: #333;
+	border-radius: 0 0 10px 10px;
+}
+#adtCount .bottom span {
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
